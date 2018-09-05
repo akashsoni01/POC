@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PpY-ll-j65">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ten PM Setup-->
+        <scene sceneID="MVq-L4-Plr">
+            <objects>
+                <tableViewController id="cmc-Ja-Cdn" customClass="TrackingSetupViewController" customModule="TenPM" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="cad-hu-LPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="STEP 1: GO HOME &amp; SETUP TRACKING" id="JZj-dv-dWq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="4NZ-Vh-6sr">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4NZ-Vh-6sr" id="W0S-M5-bCf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TmZ-Hr-ScE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                                    <color key="backgroundColor" red="0.1764705926" green="0.49803921579999999" blue="0.75686275960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <state key="normal" title="SETUP TRACKING">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="setupButtonWasPressed:" destination="cmc-Ja-Cdn" eventType="touchUpInside" id="i6E-ca-D3W"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="TmZ-Hr-ScE" secondAttribute="bottom" id="ZMq-LO-nwJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="TmZ-Hr-ScE" secondAttribute="trailing" id="mVh-YI-xCn"/>
+                                                <constraint firstItem="TmZ-Hr-ScE" firstAttribute="leading" secondItem="W0S-M5-bCf" secondAttribute="leading" id="vLs-IX-6gT"/>
+                                                <constraint firstItem="TmZ-Hr-ScE" firstAttribute="top" secondItem="W0S-M5-bCf" secondAttribute="top" id="xgi-X9-dbg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="STEP 2: ENTER SAFE DISTANCE FROM HOME" id="KLb-nB-9Hr">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="VL9-bQ-sFc">
+                                        <rect key="frame" x="0.0" y="161.5" width="375" height="99"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VL9-bQ-sFc" id="UFd-GZ-FYI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ENTER DISTANCE (KILOMETERS)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-2a-hBq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="8f4-ui-LXn"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvC-7q-fBf">
+                                                    <rect key="frame" x="0.0" y="49" width="375" height="49.5"/>
+                                                    <color key="backgroundColor" red="0.1764705926" green="0.49803921579999999" blue="0.75686275960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="l1h-Uq-CbJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <state key="normal" title="NEXT">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="distanceButtonWasPressed:" destination="cmc-Ja-Cdn" eventType="touchUpInside" id="8dT-kv-b6Y"/>
+                                                        <action selector="setupButtonWasPressed:" destination="cmc-Ja-Cdn" eventType="touchUpInside" id="Ctz-CY-wiS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Soe-2a-hBq" secondAttribute="trailing" id="M5M-oQ-jMU"/>
+                                                <constraint firstAttribute="bottom" secondItem="kvC-7q-fBf" secondAttribute="bottom" id="ac4-hU-gKb"/>
+                                                <constraint firstItem="Soe-2a-hBq" firstAttribute="leading" secondItem="UFd-GZ-FYI" secondAttribute="leading" id="cpX-gJ-wDt"/>
+                                                <constraint firstAttribute="trailing" secondItem="kvC-7q-fBf" secondAttribute="trailing" id="e3b-Ht-TBy"/>
+                                                <constraint firstItem="kvC-7q-fBf" firstAttribute="leading" secondItem="UFd-GZ-FYI" secondAttribute="leading" id="gVn-M5-I4P"/>
+                                                <constraint firstItem="Soe-2a-hBq" firstAttribute="top" secondItem="UFd-GZ-FYI" secondAttribute="top" id="zYJ-yx-Oz5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="cmc-Ja-Cdn" id="r14-Hq-u8w"/>
+                            <outlet property="delegate" destination="cmc-Ja-Cdn" id="OlQ-gc-hoM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ten PM Setup" id="Gmj-BO-G5y"/>
+                    <connections>
+                        <outlet property="distanceTextField" destination="Soe-2a-hBq" id="p7X-H4-cRH"/>
+                        <outlet property="setupButton" destination="TmZ-Hr-ScE" id="d5b-oX-rwg"/>
+                        <segue destination="n1i-TX-5M9" kind="presentation" identifier="ShowTrackingMap" id="ILU-35-epi"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Vk-kD-Fgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="-58.020989505247378"/>
+        </scene>
+        <!--Tracking...-->
+        <scene sceneID="yCP-Yc-Aav">
+            <objects>
+                <viewController id="n1i-TX-5M9" customClass="TrackingViewController" customModule="TenPM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dHu-ig-BQj"/>
+                        <viewControllerLayoutGuide type="bottom" id="JDh-zS-Erg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8jd-pF-m9B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UOc-kG-r1l">
+                                <rect key="frame" x="0.0" y="64" width="375" height="503"/>
+                                <connections>
+                                    <outlet property="delegate" destination="n1i-TX-5M9" id="IQP-5w-MhJ"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5u-wg-M47">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are a safe distance from home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvu-ao-vR7">
+                                        <rect key="frame" x="30" y="38" width="316.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" red="0.46666666870000001" green="0.76470589639999997" blue="0.26666668059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="jvu-ao-vR7" firstAttribute="centerX" secondItem="q5u-wg-M47" secondAttribute="centerX" id="78T-PZ-k03"/>
+                                    <constraint firstItem="jvu-ao-vR7" firstAttribute="centerY" secondItem="q5u-wg-M47" secondAttribute="centerY" id="RLv-91-Xmx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="q5u-wg-M47" secondAttribute="trailing" id="0YR-gO-Prn"/>
+                            <constraint firstAttribute="trailing" secondItem="UOc-kG-r1l" secondAttribute="trailing" id="1go-bb-Qow"/>
+                            <constraint firstItem="UOc-kG-r1l" firstAttribute="leading" secondItem="8jd-pF-m9B" secondAttribute="leading" id="2Un-Tg-lgT"/>
+                            <constraint firstItem="JDh-zS-Erg" firstAttribute="top" secondItem="UOc-kG-r1l" secondAttribute="bottom" constant="100" id="8qc-T6-Nwl"/>
+                            <constraint firstItem="q5u-wg-M47" firstAttribute="top" secondItem="UOc-kG-r1l" secondAttribute="bottom" id="ISv-Eg-n5d"/>
+                            <constraint firstItem="UOc-kG-r1l" firstAttribute="top" secondItem="dHu-ig-BQj" secondAttribute="bottom" id="JiT-hF-dFk"/>
+                            <constraint firstItem="q5u-wg-M47" firstAttribute="leading" secondItem="8jd-pF-m9B" secondAttribute="leading" id="Lby-jI-ZIG"/>
+                            <constraint firstItem="JDh-zS-Erg" firstAttribute="top" secondItem="q5u-wg-M47" secondAttribute="bottom" id="duZ-LT-Wn9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tracking..." id="LIq-i5-fJA"/>
+                    <connections>
+                        <outlet property="mapView" destination="UOc-kG-r1l" id="k2K-5b-Y7Q"/>
+                        <outlet property="safetyStatusLabel" destination="jvu-ao-vR7" id="r1U-Ui-fst"/>
+                        <outlet property="safetyStatusView" destination="q5u-wg-M47" id="5e0-bD-fiI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Erp-kW-9f7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="-58.020989505247378"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Lc-J5-XNL">
+            <objects>
+                <navigationController id="PpY-ll-j65" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MFK-BN-US9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cmc-Ja-Cdn" kind="relationship" relationship="rootViewController" id="EMh-Rw-NLe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f4B-UH-H5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-810" y="-58"/>
+        </scene>
+    </scenes>
+</document>
