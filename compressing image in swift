@@ -1,0 +1,132 @@
+//
+//  ViewController.swift
+//  Compression&Decompression
+//
+//  Created by Akash Soni on 05/09/18.
+//  Copyright © 2018 Akash Soni. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    var image:UIImage!
+    let urlString = "https://www.gstatic.com/webp/gallery3/1.png"
+    @IBOutlet weak var imageView: UIImageView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let data = NSData(contentsOf: NSURL(string: urlString)! as URL)
+        image = UIImage(data: data! as Data)
+        imageView.image = image
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    @IBAction func compressImage(_ sender: UIButton) {
+        print(image.size)
+        do {
+            try image.compressImage(5, completion: { (compressedImage, compressRatio) in
+                print(image.size)
+                DispatchQueue.main.async {
+                    self.imageView.image = compressedImage
+                }
+            })
+        } catch {
+            print("Error")
+        }
+    }
+    
+    @IBAction func decompressImage(_ sender: UIButton) {
+        
+    }
+    
+    
+}
+
+extension UIImage {
+    
+    enum CompressImageErrors: Error {
+        case invalidExSize
+        case sizeImpossibleToReach
+    }
+    func compressImage(_ expectedSizeKb: Int, completion : (UIImage,CGFloat) -> Void ) throws {
+        
+        let minimalCompressRate :CGFloat = 0.4 // min compressRate to be checked later
+        
+        if expectedSizeKb == 0 {
+            throw CompressImageErrors.invalidExSize // if the size is equal to zero throws
+        }
+        
+        let expectedSizeBytes = expectedSizeKb * 1024
+        let imageToBeHandled: UIImage = self
+        var actualHeight : CGFloat = self.size.height
+        var actualWidth : CGFloat = self.size.width
+        var maxHeight : CGFloat = 400 //A4 default size I'm thinking about a document
+        var maxWidth : CGFloat = 200
+        var imgRatio : CGFloat = actualWidth/actualHeight
+        let maxRatio : CGFloat = maxWidth/maxHeight
+        var compressionQuality : CGFloat = 1
+        var imageData:Data = UIImageJPEGRepresentation(imageToBeHandled, compressionQuality)!
+        while imageData.count > expectedSizeBytes {
+            
+            if (actualHeight > maxHeight || actualWidth > maxWidth){
+                if(imgRatio < maxRatio){
+                    imgRatio = maxHeight / actualHeight;
+                    actualWidth = imgRatio * actualWidth;
+                    actualHeight = maxHeight;
+                }
+                else if(imgRatio > maxRatio){
+                    imgRatio = maxWidth / actualWidth;
+                    actualHeight = imgRatio * actualHeight;
+                    actualWidth = maxWidth;
+                }
+                else{
+                    actualHeight = maxHeight;
+                    actualWidth = maxWidth;
+                    compressionQuality = 1;
+                }
+            }
+            let rect = CGRect(x: 0.0, y: 0.0, width: actualWidth, height: actualHeight)
+            UIGraphicsBeginImageContext(rect.size);
+            imageToBeHandled.draw(in: rect)
+            let img = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            if let imgData = UIImageJPEGRepresentation(img!, compressionQuality) {
+                if imgData.count > expectedSizeBytes {
+                    if compressionQuality > minimalCompressRate {
+                        compressionQuality -= 0.1
+                    } else {
+                        maxHeight = maxHeight * 0.9
+                        maxWidth = maxWidth * 0.9
+                    }
+                }
+                imageData = imgData
+            }
+            
+            
+        }
+        completion(UIImage(data: imageData)!, compressionQuality)
+    }
+    
+    
+}
+
+extension UIImage {
+    enum JPEGQuality: CGFloat {
+        case lowest  = 0
+        case low     = 0.25
+        case medium  = 0.5
+        case high    = 0.75
+        case highest = 1
+    }
+    
+    /// Returns the data for the specified image in JPEG format.
+    /// If the image object’s underlying image data has been purged, calling this function forces that data to be reloaded into memory.
+    /// - returns: A data object containing the JPEG data, or nil if there was a problem generating the data. This function may return nil if the image has no data or if the underlying CGImageRef contains data in an unsupported bitmap format.
+    func jpeg(_ quality: JPEGQuality) -> Data? {
+        return UIImageJPEGRepresentation(self, quality.rawValue)
+    }
+}
