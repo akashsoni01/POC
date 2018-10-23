@@ -1,0 +1,22 @@
+//https://blog.apoorvmote.com/convert-date-to-string-vice-versa-in-swift/
+extension Date {
+
+    // Convert local time to UTC (or GMT)
+    func toGlobalTime() -> Date {
+        let timezone = TimeZone.current
+        let seconds = -TimeInterval(timezone.secondsFromGMT(for: self))
+        return Date(timeInterval: seconds, since: self)
+    }
+
+}
+
+func convert(timeString:String) -> Date?{
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd MMM yyyy hh:mm:ss zz"
+    let date = formatter.date(from: timeString)
+    return date
+}
+// Code Example
+let localdate = convert(timeString: "23 Oct 2018 11:49:44 GMT")
+//for local to GMT
+localdate!.toGlobalTime()
