@@ -35,13 +35,12 @@ extension String {
     }
 }
 
-"hello".levenshteinDistanceScore(to: "hi", ignoreCase: true, trimWhiteSpacesAndNewLines: false)
 
-infix operator =~
+infix operator ~=
 func ~=(string: String, otherString: String) -> Bool {
     return string.levenshteinDistanceScore(to: otherString) >= 0.5
 }
 
-let string1 = "akash"
-let string2 = "alash"
-string1 ~= string2
+//let string1 = "akash"
+//let string2 = "alash"
+//string1 ~= string2
