@@ -1,0 +1,6 @@
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.alpha = 0
+        UIView.animate(withDuration: 1) {
+            cell.alpha = 1
+        }
+    }
