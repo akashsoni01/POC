@@ -1,0 +1,5 @@
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageNumber = round(scrollView.contentOffset.x/view.frame.width)
+        let pageCount = pages.count
+        progressView.progress = Float((pageNumber+1.0)/CGFloat(pageCount))
+    }
