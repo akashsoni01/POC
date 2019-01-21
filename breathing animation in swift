@@ -1,0 +1,9 @@
+        UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse,.repeat], animations: {
+            self.player1Label.frame.size.width += 8
+            self.player1Label.frame.size.height += 8
+        }) { _ in
+            UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse, .repeat], animations: {
+                self.player1Label.frame.size.width -= 8
+                self.player1Label.frame.size.height -= 8
+            })
+        }
