@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginSignup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrp-Mr-ZpW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Day-PY-u3S">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LPW-X6-Jlf">
+                                                <rect key="frame" x="32" y="199" width="256" height="170"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="His" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfi-Gy-fET">
+                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="27.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UUH-Kh-9VY">
+                                                        <rect key="frame" x="0.0" y="47.5" width="256" height="27.5"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k0Y-PA-HeR">
+                                                        <rect key="frame" x="0.0" y="95" width="256" height="27.5"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGs-P5-DnW">
+                                                        <rect key="frame" x="0.0" y="142.5" width="256" height="27.5"/>
+                                                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Login">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="LPW-X6-Jlf" firstAttribute="width" secondItem="Day-PY-u3S" secondAttribute="width" multiplier="0.8" id="9bi-hc-mND"/>
+                                            <constraint firstItem="LPW-X6-Jlf" firstAttribute="centerY" secondItem="Day-PY-u3S" secondAttribute="centerY" id="d8H-Pl-MED"/>
+                                            <constraint firstItem="LPW-X6-Jlf" firstAttribute="centerX" secondItem="Day-PY-u3S" secondAttribute="centerX" id="l9I-ZP-brb"/>
+                                            <constraint firstItem="LPW-X6-Jlf" firstAttribute="height" secondItem="Day-PY-u3S" secondAttribute="height" multiplier="0.3" id="z10-6g-UDD"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Day-PY-u3S" secondAttribute="trailing" id="4xa-vg-Ejy"/>
+                                    <constraint firstItem="Day-PY-u3S" firstAttribute="width" secondItem="Zrp-Mr-ZpW" secondAttribute="width" id="668-pd-L4Z"/>
+                                    <constraint firstItem="Day-PY-u3S" firstAttribute="height" secondItem="Zrp-Mr-ZpW" secondAttribute="height" id="cXo-EY-d97"/>
+                                    <constraint firstItem="Day-PY-u3S" firstAttribute="top" secondItem="Zrp-Mr-ZpW" secondAttribute="top" priority="999" id="q9e-f0-WQe"/>
+                                    <constraint firstItem="Day-PY-u3S" firstAttribute="leading" secondItem="Zrp-Mr-ZpW" secondAttribute="leading" id="qS4-na-orf"/>
+                                    <constraint firstAttribute="bottom" secondItem="Day-PY-u3S" secondAttribute="bottom" id="swa-SG-f5G"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zrp-Mr-ZpW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="48r-0X-K6I"/>
+                            <constraint firstItem="Zrp-Mr-ZpW" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="FBm-JX-J9G"/>
+                            <constraint firstItem="Zrp-Mr-ZpW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RUf-3O-o5J"/>
+                            <constraint firstItem="Zrp-Mr-ZpW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="z9B-bw-84X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="Day-PY-u3S" id="0dr-Nq-tVz"/>
+                        <outlet property="pswTxt" destination="k0Y-PA-HeR" id="6O6-1r-Vuj"/>
+                        <outlet property="scrollView" destination="Zrp-Mr-ZpW" id="WRn-yh-aDr"/>
+                        <outlet property="stackView" destination="LPW-X6-Jlf" id="OkE-OB-FTc"/>
+                        <outlet property="usernameTxt" destination="UUH-Kh-9VY" id="qE4-Gf-Lj7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61.600000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+</document>
