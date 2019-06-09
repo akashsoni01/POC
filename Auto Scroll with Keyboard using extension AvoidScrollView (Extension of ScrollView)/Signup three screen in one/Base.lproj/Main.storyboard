@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Signup_three_screen_in_one" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lo-s0-03x" customClass="TPKeyboardAvoidingScrollView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="API-OX-zsC">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="test" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDL-j7-6Nf">
+                                                <rect key="frame" x="20" y="600" width="374" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="wDL-j7-6Nf" firstAttribute="top" secondItem="API-OX-zsC" secondAttribute="top" constant="600" id="6e2-cR-WYP"/>
+                                            <constraint firstAttribute="trailing" secondItem="wDL-j7-6Nf" secondAttribute="trailing" constant="20" id="ibw-YR-UaU"/>
+                                            <constraint firstItem="wDL-j7-6Nf" firstAttribute="leading" secondItem="API-OX-zsC" secondAttribute="leading" constant="20" id="jdy-9U-5S4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="API-OX-zsC" firstAttribute="width" secondItem="6lo-s0-03x" secondAttribute="width" id="OGC-Ad-GOm"/>
+                                    <constraint firstAttribute="trailing" secondItem="API-OX-zsC" secondAttribute="trailing" id="hWN-0k-1eI"/>
+                                    <constraint firstItem="API-OX-zsC" firstAttribute="top" secondItem="6lo-s0-03x" secondAttribute="top" id="leD-JI-KEb"/>
+                                    <constraint firstAttribute="bottom" secondItem="API-OX-zsC" secondAttribute="bottom" id="rJH-JS-qLI"/>
+                                    <constraint firstItem="API-OX-zsC" firstAttribute="leading" secondItem="6lo-s0-03x" secondAttribute="leading" id="tzz-IP-t5g"/>
+                                    <constraint firstItem="API-OX-zsC" firstAttribute="height" secondItem="6lo-s0-03x" secondAttribute="height" id="ubH-tD-fyh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6lo-s0-03x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CPr-cm-gY2"/>
+                            <constraint firstItem="6lo-s0-03x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IvX-mz-WFC"/>
+                            <constraint firstItem="6lo-s0-03x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eig-FY-KHW"/>
+                            <constraint firstItem="6lo-s0-03x" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="oed-Xl-PwD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="20.758928571428569"/>
+        </scene>
+    </scenes>
+</document>
