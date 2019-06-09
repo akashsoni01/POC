@@ -1,0 +1,24 @@
+Note: For either solution, add UITextViewDelegate to the class and set textView.delegate = self to use the text view’s delegate methods.
+
+Solution #1 - If you want the placeholder to disappear as soon as the user selects the text view:
+
+First set the UITextView to contain the placeholder text and set it to a light gray color to mimic the look of a UITextField's placeholder text. Either do so in the viewDidLoad or upon the text view's creation.
+
+textView.text = "Placeholder"
+textView.textColor = UIColor.lightGray
+Then when the user begins to edit the text view, if the text view contains a placeholder (i.e. if its text color is light gray) clear the placeholder text and set the text color to black in order to accommodate the user's entry.
+
+func textViewDidBeginEditing(_ textView: UITextView) {
+    if textView.textColor == UIColor.lightGray {
+        textView.text = nil
+        textView.textColor = UIColor.black
+    }
+}
+Then when the user finishes editing the text view and it's resigned as the first responder, if the text view is empty, reset its placeholder by re-adding the placeholder text and setting its color to light gray.
+
+func textViewDidEndEditing(_ textView: UITextView) {
+    if textView.text.isEmpty {
+        textView.text = "Placeholder"
+        textView.textColor = UIColor.lightGray
+    }
+}
