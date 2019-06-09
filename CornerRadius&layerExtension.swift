@@ -6,7 +6,7 @@
 //  Copyright © 2019 Akash Soni. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIView {
     
