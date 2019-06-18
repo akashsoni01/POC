@@ -1,0 +1,12 @@
+    func convert(timeString:String) -> String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM dd, yyyy"
+        
+        if let date = dateFormatterGet.date(from: timeString){
+            return dateFormatterPrint.string(from: date)
+        }
+        return ""
+    }
