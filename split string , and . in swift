@@ -1,0 +1,4 @@
+func splitString(_ string:String) ->[String]{
+    let slicedStirng = string.split{$0 == " "}.map{String($0)}
+    return slicedStirng
+}
