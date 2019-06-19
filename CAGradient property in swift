@@ -1,0 +1,7 @@
+        let gradient = CAGradientLayer()
+         gradient.colors = [UIColor.blue.cgColor,UIColor.black.cgColor]
+        gradient.locations = [0,1]
+        gradient.frame = view.frame
+        gradient.borderWidth = 2
+        gradient.borderColor = UIColor.orange.cgColor
+        view.layer.addSublayer(gradient)
