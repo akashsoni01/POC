@@ -1,0 +1,112 @@
+
+import UIKit
+
+class SelectListViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    var medicalProblemData = [MedicalProblem]()
+    var activity: ActivityIndicator?
+    var indexPath : IndexPath = IndexPath(row: 0, section: 0)
+    var didBeginEditing = false
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+        tableView.allowsMultipleSelection = false
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonAction))
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0 )) as? 
+        
+        MedicalConditionListTableViewCell{
+            cell.otherTextField.text = ProblemViewController.medicalProblemTitle
+        }
+    }
+    @objc func doneButtonAction(){
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0 )) as? MedicalConditionListTableViewCell{
+            let text = cell.otherTextField.text ?? ""
+            ProblemViewController.medicalProblemTitle = text
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+
+}
+extension SelectListViewController : UITableViewDelegate,UITableViewDataSource{
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 80
+//    }
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont.systemFont(ofSize: 15)
+        
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0
+        {
+            return 1
+        }
+        else{
+            return medicalProblemData.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalConditionListTableViewCell") as! MedicalConditionListTableViewCell
+            cell.accessoryType = .none
+            cell.otherTextField.delegate = self
+            return cell
+        }
+        if indexPath.section == 1
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalConditionListTableViewCell1")
+            cell?.textLabel?.text = medicalProblemData[indexPath.row].medical_problem
+            cell?.selectionStyle = .none
+            cell?.accessoryType = .none
+            return cell!
+        }
+        return UITableViewCell()
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1
+        {
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .none
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1
+        {
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .checkmark
+            let cell1 = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MedicalConditionListTableViewCell
+            self.indexPath = indexPath
+            if self.didBeginEditing == true
+            {
+                cell1.otherTextField.endEditing(true)
+                self.didBeginEditing = false
+            }
+            cell1.otherTextField.text = cell?.textLabel?.text
+        }
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0
+        {
+            return "YOUR MEDICAL CONDITION IS: "
+        }
+        else{
+            return "SELECT YOUR MEDICAL CONDITION"
+        }
+    }
+}
+extension SelectListViewController:UITextFieldDelegate{
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+            self.didBeginEditing = true
+            let cell = tableView.cellForRow(at: self.indexPath)
+            cell?.accessoryType = .none
+        //tableView.reloadRows(at: [self.indexPath ?? IndexPath()], with: .automatic)
+    }
+}
