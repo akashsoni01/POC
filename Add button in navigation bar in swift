@@ -1,0 +1,9 @@
+fucn viewDidLoad(_ animated:Bool){
+        super.viewDisLoad(animated)
+        let button = UIButton(type: .system)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        button.setTitle("check", for: UIControl.State.normal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+
+}
