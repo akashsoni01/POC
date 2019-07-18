@@ -1,0 +1,5 @@
+var sortedArray = names.sorted { $0.($1) == NSComparisonResult.OrderedAscending }
+
+
+//sort array of string in swift 4.2
+var sortedArray = sectionTitles.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
