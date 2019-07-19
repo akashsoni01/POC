@@ -1,0 +1,88 @@
+import UIKit
+//code for foreach in swift
+//let array = ["a","v","c","d","f"]
+//array.forEach { (str) in
+//    print(str)
+//}
+//repeat while , for in , while loop
+/*while condition{
+    
+}
+repeat{
+    
+}while <#condition#>
+
+for in {
+    
+}
+ */
+
+//closoures in swift non escaping type
+/*
+ 
+ typealias intIntType = (Int)->Int
+ var globalHandler:intIntType?
+ 
+ func test(handler:intIntType){
+ for _ in 0..<100{
+ print("service hit")
+ }
+ handler(5)
+ //    globalHandler = handler
+ 
+ }
+ 
+ test { (x) -> Int in
+ print("hello")
+ return x
+ }
+ //escaping type
+ func testEscaping(handler:@escaping intIntType){
+ for _ in 0..<100{
+ print("service hit2")
+ }
+ globalHandler = handler
+ }
+ testEscaping { (x) -> Int in
+ print(x)
+ return x
+ }
+ 
+ 
+ */
+
+//Higher order function
+/*
+ 
+ //sorted
+ let stringArray = ["v","d","e","r","q"]
+ let sortedArray = stringArray.sorted()
+ let descendingOrder = stringArray.sorted { (a, b) -> Bool in
+ return a>b
+ }
+ //filter
+ let filteredArray = stringArray.filter { (a) -> Bool in
+ return a<"q"
+ }
+ //map
+ let intArray = [1,2,3,4,5,6,7,8]
+ let strArray = intArray.map { (a) -> String in
+ return String(a)
+ }
+ //reduce
+ let combinedValue = intArray.reduce(0) { (result, a) -> Int in
+ return result+a
+ }
+ let combinedStringValue  = stringArray.reduce("") { (result, a) -> String in
+ return result+a
+ }
+ 
+ //flatmap
+ let arrays = [[1,2,3],[4,5,6]]
+ let flatedArray = arrays.flatMap({$0})
+ print(flatedArray)
+ //combo example
+ let result = arrays.flatMap({$0}).filter( {$0%2 == 0}).reduce(0,+)
+ print(result)
+ 
+ */
