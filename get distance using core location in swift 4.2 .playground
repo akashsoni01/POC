@@ -1,0 +1,14 @@
+import CoreLocation
+
+//My location
+var myLocation = CLLocation(latitude: 59.244696, longitude: 17.813868)
+
+//My buddy's location
+var myBuddysLocation = CLLocation(latitude: 59.326354, longitude: 18.072310)
+
+//Measuring my distance to my buddy's (in km)
+var distance = myLocation.distance(from: myBuddysLocation) / 1000
+
+//Display the result in km
+print(distance)
+print(String(format: "The distance to my buddy is %.01fkm", distance))
