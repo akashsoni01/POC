@@ -25,7 +25,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         let imagePickerView = UIImagePickerController()
         imagePickerView.delegate = self
         imagePickerView.allowsEditing = true
-        imagePickerView.sourceType = .photoLibrary
+        imagePickerView.sourceType = .camera
         self.present(imagePickerView, animated: true, completion: nil)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
