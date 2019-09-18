@@ -1,0 +1,11 @@
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        DispatchQueue.main.async {
+            searchBar.enablesReturnKeyAutomatically = true
+            searchBar.showsCancelButton = true
+        }
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        DispatchQueue.main.async {
+            searchBar.showsCancelButton = false
+        }
+    }
