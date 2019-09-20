@@ -1,0 +1,128 @@
+import UIKit
+
+enum Either<V, E: Error>{
+    case value(V)
+    case error(E)
+}
+//Then we can define a few typical errors that might happen during a fetch operation:
+enum FetchError: Error{
+    case nilUrl
+    case connectionError(Error)
+    case emptyData
+}
+
+//This would be the default declaration (as opposed to implementation) of our Fetch able protocol:
+protocol Fetchable{
+    var fetchUrl: URL? {get}
+}
+
+//After declaring our Fetchable protocol, it’s time to implement the default fetch(...) function as part of an extension on this protocol:
+extension Fetchable{
+    func fetchImage(completion: @escaping (Either<UIImage, FetchError>)->Void){
+        guard let url = fetchUrl else {
+            completion(Either.error(.nilUrl))
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil{
+                
+            }else{
+                guard let data = data else {
+                    completion(Either.error(FetchError.emptyData))
+                    return
+                }
+                let image = UIImage(data: data)
+                completion(Either.value(image!))
+            }
+        }
+        task.resume()
+    }
+    
+    func fetch(completion: @escaping (Either<Data, FetchError>) -> Void){
+        guard let url = fetchUrl else {
+            completion(Either.error(.nilUrl))
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil{
+                
+            }else{
+                guard let data = data else {
+                    completion(Either.error(FetchError.emptyData))
+                    return
+                }
+                completion(Either.value(data))
+            }
+        }
+        task.resume()
+    }
+}
+extension String: Fetchable{
+    var fetchUrl: URL?{
+        return URL(string: self)
+    }
+}
+extension URL: Fetchable{
+    var fetchUrl: URL?{
+        return self
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//use of code 
+
+
+
+
+
+
+
+
+class ViewController: UIViewController {
+    @IBOutlet weak var imageView:UIImageView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        "https://dummyimage.com/300/09f/fff.png".fetchImage { (either) in
+            switch either{
+            case .error(let error):
+                print(error.localizedDescription)
+                break
+            case .value(let value):
+                DispatchQueue.main.async {
+                    self.imageView.image = value
+                }
+                break
+            }
+        }
+        
+        "https://www.google.com".fetch { (either) in
+            switch either{
+            case .error(let error):
+                print(error.localizedDescription)
+                break
+            case .value(let value):
+                print(value)
+                break
+            }
+        }
+        // Do any additional setup after loading the view.
+    }
+
+
+}
+
+
