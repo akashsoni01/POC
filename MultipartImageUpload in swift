@@ -1,0 +1,127 @@
+import Foundation
+
+protocol URLServiceDelegate {
+    //func dataFetchedFromService(dataFromServer : Data)
+    func dataFetchedFromService(dataFromServer : Data?,response : URLResponse?, err : Error? )
+}
+class URLService {
+    var delegate : URLManager?
+    var urlpath:URL?
+    var request:URLRequest?
+    
+    func fetchAsyncData(urlPath : String, dataToServer : Data, params:Dictionary<String, Any> , method: String = "GET")
+    {
+        request = URLRequest(url: URL(string: urlPath)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
+        request?.httpMethod = method
+        
+        request?.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request?.addValue(KCLIENTVERSION, forHTTPHeaderField: "ClientVersion")
+
+        switch method {
+        case "GET":
+            if !params.isEmpty {
+                var urlComp = URLComponents(string: urlPath)!
+                var items = [URLQueryItem]()
+            
+                for (key,value) in params {
+                    items.append(URLQueryItem(name: key, value: value as? String))
+                }
+            
+                items = items.filter{!$0.name.isEmpty}
+            
+                if !items.isEmpty {
+                    urlComp.queryItems = items
+                }
+                urlpath =  urlComp.url
+                request?.url = urlpath
+            }
+        case "POST", "PUT":
+            request?.httpBody = dataToServer
+        default:
+            break
+        }
+        
+        
+        if !(urlPath.contains("public") || urlPath.contains("auth")) {
+            request?.allHTTPHeaderFields = ["Authorization": "Bearer " + (KeychainWrapper.standard.string(forKey: KCONSTANT.authToken.rawValue) ?? "")]
+         }
+        
+        //request?.allHTTPHeaderFields = ["ClientVersion": KCLIENTVERSION]
+
+        let configuration = URLSessionConfiguration.default
+        let task = URLSession(configuration: configuration).dataTask(with: request!) {  (data, response, error) in
+            self.delegate?.dataFetchedFromService(dataFromServer:  data, response: response, err: error)
+        }
+        task.resume()
+    }
+}
+
+
+
+
+
+extension URLService {
+    
+    
+    func uploadPhotoToServer(urlString:String,params:[String:Int]?,imageData:Data,fileName:String){
+        //param -> id , url, imagedata,filename
+        
+        let url = URL(string: urlString)
+        var request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
+        
+//        let param = ["id":1]
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = ["Authorization": "Bearer " + (KeychainWrapper.standard.string(forKey: KCONSTANT.authToken.rawValue) ?? "")]
+        
+        let boundary = generateBoundaryString()
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+//        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+//        guard let imageData = imageView.image?.jpegData(compressionQuality: 1.0) else { return }
+        //for camera or gallery
+        request.httpBody = createBodyWithParameters(param: params, filePathKey: "profile_image", imageDataKey: imageData, boundary: boundary,filename: fileName)
+        let configuration = URLSessionConfiguration.default
+        let task = URLSession(configuration: configuration).dataTask(with: request) {  (data, response, error) in
+                self.delegate?.dataFetchedFromService(dataFromServer:  data, response: response, err: error)
+        }
+        task.resume()
+    }
+    
+    
+    
+    func createBodyWithParameters(param:[String:Int]?, filePathKey: String?, imageDataKey: Data, boundary: String, filename: String) -> Data {
+        var body = Data()
+        
+        if(param != nil) {
+            for (key,value) in param! {
+                body.appendString(string: "--\(boundary)\r\n")
+                body.appendString(string: "Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                body.appendString(string: "\(value)\r\n")
+            }
+        }
+        
+        let mimeype = "image/jpg"
+        
+        body.appendString(string: "--\(boundary)\r\n")
+//      body.appendString(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\(filename)\"\r\n")
+        body.appendString(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\(filename)\r\n")
+        body.appendString(string: "Content-Type : \(mimeype)\r\n\r\n")
+        body.append(imageDataKey)
+        body.appendString(string: "\r\n")
+        
+        body.appendString(string: "--\(boundary)--\r\n")
+        return body
+    }
+    
+    func generateBoundaryString() -> String {
+        return "Boundary-\(NSUUID().uuidString)"
+    }
+}
+
+
+extension Data {
+    mutating func appendString(string: String) {
+        let data = string.data(using: .utf8, allowLossyConversion: true)
+        append(data!)
+    }
+}
