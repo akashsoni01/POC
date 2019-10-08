@@ -1,134 +1,94 @@
-import Foundation
+//
+//  ViewController.swift
+//  UploadImage
+//
+//  Created by Akash Soni on 08/10/19.
+//  Copyright © 2019 Akash Soni. All rights reserved.
+//
 
-protocol URLServiceDelegate {
-    //func dataFetchedFromService(dataFromServer : Data)
-    func dataFetchedFromService(dataFromServer : Data?,response : URLResponse?, err : Error? )
-}
-class URLService {
-    var delegate : URLManager?
-    var urlpath:URL?
-    var request:URLRequest?
+import UIKit
+
+class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     
-    func fetchAsyncData(urlPath : String, dataToServer : Data, params:Dictionary<String, Any> , method: String = "GET")
-    {
-        request = URLRequest(url: URL(string: urlPath)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
-        request?.httpMethod = method
-        
-        request?.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request?.addValue(KCLIENTVERSION, forHTTPHeaderField: "ClientVersion")
-
-        switch method {
-        case "GET":
-            if !params.isEmpty {
-                var urlComp = URLComponents(string: urlPath)!
-                var items = [URLQueryItem]()
-            
-                for (key,value) in params {
-                    items.append(URLQueryItem(name: key, value: value as? String))
-                }
-            
-                items = items.filter{!$0.name.isEmpty}
-            
-                if !items.isEmpty {
-                    urlComp.queryItems = items
-                }
-                urlpath =  urlComp.url
-                request?.url = urlpath
-            }
-        case "POST", "PUT":
-            request?.httpBody = dataToServer
-        default:
-            break
-        }
-        
-        
-        if !(urlPath.contains("public") || urlPath.contains("auth")) {
-            request?.allHTTPHeaderFields = ["Authorization": "Bearer " + (KeychainWrapper.standard.string(forKey: KCONSTANT.authToken.rawValue) ?? "")]
-         }
-        
-        //request?.allHTTPHeaderFields = ["ClientVersion": KCLIENTVERSION]
-
-        let configuration = URLSessionConfiguration.default
-        let task = URLSession(configuration: configuration).dataTask(with: request!) {  (data, response, error) in
-            self.delegate?.dataFetchedFromService(dataFromServer:  data, response: response, err: error)
-        }
-        task.resume()
+    @IBOutlet weak var imageView: UIImageView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
-}
-
-
-
-
-
-extension URLService {
     
-    
-    func uploadPhotoToServer(urlString:String,params:[String:Int]?,imageData:Data,fileName:String){
-        //param -> id , url, imagedata,filename
-        
-        let url = URL(string: urlString)
-        var request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
-        
-//        let param = ["id":1]
+    @IBAction func uploadTapped(_ sender: UIButton) {
+        let imagePickerView = UIImagePickerController()
+        imagePickerView.delegate = self
+        imagePickerView.allowsEditing = true
+        imagePickerView.sourceType = .photoLibrary
+        self.present(imagePickerView, animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("cancel tapped")
+        self.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        imageView.image = image
+        var request  = URLRequest(url: URL(string: "http://clients.aksinteractive.com/a4a-new/member-apis/Users/profileUpdate")!)
         request.httpMethod = "POST"
-        request.allHTTPHeaderFields = ["Authorization": "Bearer " + (KeychainWrapper.standard.string(forKey: KCONSTANT.authToken.rawValue) ?? "")]
-        
-        let boundary = generateBoundaryString()
+        let boundary = "Boundary-\(UUID().uuidString)"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-//        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        let params = [         "sessToken":"$2y$10$rCfiYyNQudh5UQVT1f4vwu.sPtsOPrJQHftLOt6PpuRaljbnlnFgu",
+                               "userId":"124",
+                               "firstName":"Yatin",
+                               "lastName":"Yatin",
+                               "city":"135",
+                               "address":"test",
+                               "dateOfBirth":"2006-08-16",
+                               "dateOfAnniversary":"2013-08-13",
+                               "spouseName":"xyz",
+        ]
+        request.httpBody = createBody(parameters: params,
+                                boundary: boundary,
+                                data:image.jpegData(compressionQuality: 0.5)!,
+                                mimeType: "image/jpg",
+                                filename: "hello.jpg")
         
-//        guard let imageData = imageView.image?.jpegData(compressionQuality: 1.0) else { return }
-        //for camera or gallery
-        request.httpBody = createBodyWithParameters(param: params, filePathKey: "profile_image", imageDataKey: imageData, boundary: boundary,filename: fileName)
         let configuration = URLSessionConfiguration.default
         let task = URLSession(configuration: configuration).dataTask(with: request) {  (data, response, error) in
-                self.delegate?.dataFetchedFromService(dataFromServer:  data, response: response, err: error)
+            print("reached")
         }
         task.resume()
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    func createBodyWithParameters(param:[String:Int]?, filePathKey: String?, imageDataKey: Data, boundary: String, filename: String) -> Data {
+    func createBody(parameters: [String: String],
+                    boundary: String,
+                    data: Data,
+                    mimeType: String,
+                    filename: String) -> Data {
         var body = Data()
         
-        if(param != nil) {
-            for (key,value) in param! {
-                body.appendString(string: "--\(boundary)\r\n")
-                body.appendString(string: "Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
-                body.appendString(string: "\(value)\r\n")
-            }
+        let boundaryPrefix = "--\(boundary)\r\n"
+        
+        for (key, value) in parameters {
+            body.appendString(boundaryPrefix)
+            body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+            body.appendString("\(value)\r\n")
         }
         
-        let mimeype = "image/jpg"
+        body.appendString(boundaryPrefix)
+        body.appendString("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n")
+        body.appendString("Content-Type: \(mimeType)\r\n\r\n")
+        body.append(data)
+        body.appendString("\r\n")
+        body.appendString("--".appending(boundary.appending("--")))
         
-        body.appendString(string: "--\(boundary)\r\n")
-//      body.appendString(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\(filename)\"\r\n")
-        body.appendString(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\(filename)\r\n")
-        body.appendString(string: "Content-Type : \(mimeype)\r\n\r\n")
-        body.append(imageDataKey)
-        body.appendString(string: "\r\n")
-        
-        body.appendString(string: "--\(boundary)--\r\n")
-        return body
-    }
-    
-    func generateBoundaryString() -> String {
-        return "Boundary-\(NSUUID().uuidString)"
+        return body as Data
     }
 }
 
 
 extension Data {
-    mutating func appendString(string: String) {
-        let data = string.data(using: .utf8, allowLossyConversion: true)
-        append(data!)
-    }
-    
-    /*
-    
-                    callApiUploadImage(imageData:data,fileName:(info[UIImagePickerController.InfoKey.imageURL] as! URL).lastPathComponent)
-or                 callApiUploadImage(imageData:data,fileName:"fileName")
-
-    */
+        mutating func appendString(_ string: String) {
+            let data = string.data(using: .utf8, allowLossyConversion: true)
+            append(data!)
+        }
 }
