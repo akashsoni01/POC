@@ -124,4 +124,11 @@ extension Data {
         let data = string.data(using: .utf8, allowLossyConversion: true)
         append(data!)
     }
+    
+    /*
+    
+                    callApiUploadImage(imageData:data,fileName:(info[UIImagePickerController.InfoKey.imageURL] as! URL).lastPathComponent)
+or                 callApiUploadImage(imageData:data,fileName:"fileName")
+
+    */
 }
