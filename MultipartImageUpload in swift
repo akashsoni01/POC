@@ -44,50 +44,63 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
                                "dateOfAnniversary":"2013-08-13",
                                "spouseName":"xyz",
         ]
-        request.httpBody = createBody(parameters: params,
-                                boundary: boundary,
-                                data:image.jpegData(compressionQuality: 0.5)!,
-                                mimeType: "image/jpg",
-                                filename: "hello.jpg")
+        request.httpBody = createBodyWithParameters(param: params, filePathKey: "userImg", imageDataKey: image.jpegData(compressionQuality: 0.2)!, boundary: boundary,filename: "image.jpeg")
         
         let configuration = URLSessionConfiguration.default
         let task = URLSession(configuration: configuration).dataTask(with: request) {  (data, response, error) in
             print("reached")
+            if error != nil{
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: "Error while upload.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+            }else{
+                DispatchQueue.main.async {
+                    print(String(data: (data)!, encoding: .utf8))
+                    let alert = UIAlertController(title: "Uploaded", message: "Successfully uploaded image.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
         task.resume()
         
         self.dismiss(animated: true, completion: nil)
     }
     
-    func createBody(parameters: [String: String],
-                    boundary: String,
-                    data: Data,
-                    mimeType: String,
-                    filename: String) -> Data {
+    
+    func createBodyWithParameters(param:[String:String]?, filePathKey: String?, imageDataKey: Data, boundary: String, filename: String) -> Data {
         var body = Data()
         
-        let boundaryPrefix = "--\(boundary)\r\n"
-        
-        for (key, value) in parameters {
-            body.appendString(boundaryPrefix)
-            body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
-            body.appendString("\(value)\r\n")
+        if(param != nil) {
+            for (key,value) in param! {
+                body.appendString(string: "--\(boundary)\r\n")
+                body.appendString(string: "Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                body.appendString(string: "\(value)\r\n")
+            }
         }
         
-        body.appendString(boundaryPrefix)
-        body.appendString("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n")
-        body.appendString("Content-Type: \(mimeType)\r\n\r\n")
-        body.append(data)
-        body.appendString("\r\n")
-        body.appendString("--".appending(boundary.appending("--")))
+        let mimeype = "image/jpg"
         
-        return body as Data
+        body.appendString(string: "--\(boundary)\r\n")
+        //      body.appendString(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\(filename)\"\r\n")
+        body.appendString(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\(filename)\r\n")
+        body.appendString(string: "Content-Type : \(mimeype)\r\n\r\n")
+        body.append(imageDataKey)
+        body.appendString(string: "\r\n")
+        
+        body.appendString(string: "--\(boundary)--\r\n")
+        return body
     }
 }
 
 
 extension Data {
-        mutating func appendString(_ string: String) {
+        mutating func appendString(string string: String) {
             let data = string.data(using: .utf8, allowLossyConversion: true)
             append(data!)
         }
