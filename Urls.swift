@@ -22,7 +22,7 @@ let removeCard = "removeCard"
 let changePassword = "changePassword"
 func baseurl(string: String) -> String
 {
-    return "http://192.168.1.191:8080/goCrypto/" + string
+    return "http://192.168.1.191:8080/go/" + string
 }
 
 
