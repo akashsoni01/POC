@@ -1,0 +1,14 @@
+        tableview.tableFooterView = UIView()
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 30))
+        let resetButton = UIButton(type: .custom)
+        resetButton.frame = CGRect(x: (headerView.frame.width - 240) / 2, y: (headerView.frame.height - 30) / 2,width: 240,height: 30);
+        resetButton.setTitle("Reset", for: .normal)
+        resetButton.setTitleColor(UIColor.red, for: .normal)
+        let border = CALayer()
+        border.backgroundColor = UIColor.lightGray.cgColor
+        border.frame = CGRect(x: 0, y: headerView.frame.size.height-1, width: headerView.frame.size.width, height: 0.5)
+        headerView.layer.addSublayer(border)
+        resetButton.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
+        headerView.addSubview(resetButton)
+        tableview.tableHeaderView = headerView;
+        tableview.tableFooterView = UIView()
