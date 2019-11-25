@@ -1,0 +1,14 @@
+ @objc func shareButtonTapped(sender: UIView)
+    {
+        let fileManager = FileManager.default
+        let documentoPath = pdfURL.path
+        if fileManager.fileExists(atPath: documentoPath){
+            let documento = NSData(contentsOfFile: documentoPath)
+            let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [documento!], applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView=self.view
+            present(activityViewController, animated: true, completion: nil)
+        }
+        else {
+            print("Document was not found")
+        }
+    }
