@@ -1,0 +1,37 @@
+                    do{
+                        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+                        let url = URL(fileURLWithPath: path)
+                        var filePath = url.appendingPathComponent(component).path
+                        let fileManager1 = FileManager.default
+                        if fileManager1.fileExists(atPath: filePath) {
+                            print("FILE AVAILABLE in VC")
+                            filePath = "file://\(filePath)"
+                            let fileUrlkk = Foundation.URL(string: filePath)
+                            let data = try Data(contentsOf: fileUrlkk!)
+                            
+                            //  let data = try Data(contentsOf: pdfURL) // tried but didn’t work
+                            
+                            if #available(iOS 11.0, *) {
+                                DispatchQueue.main.async {
+                                    let vc = PDFViewController()
+                                    vc.webUrl = filePath
+                                    self.navigationController?.pushViewController(vc, animated: true)
+                                }
+                            } else {
+                                // Fallback on earlier versions
+                                DispatchQueue.main.async {
+                                    let storyboard = UIStoryboard(name: "Eligibility", bundle: nil)
+                                    let vc = storyboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+                                    vc.data = data
+                                    vc.url = pdfURL
+                                    self.navigationController?.pushViewController(vc, animated: true)
+                                }
+                            }
+                            
+                        } else {
+                            print("FILE NOT AVAILABLE in VC")
+                        }
+                    }
+                    catch let error as NSError {
+                        print("An error took place: \(error)")
+                    }
