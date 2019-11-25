@@ -15,6 +15,12 @@ class PDFViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pdfView.minScaleFactor = 0.1
+        pdfView.maxScaleFactor = 5
+
+        pdfView.autoScales = true
+        pdfView.displayMode = .singlePageContinuous
+        pdfView.displayDirection = .vertical
         self.downloadPDF()
     }
     func showPDF(){
