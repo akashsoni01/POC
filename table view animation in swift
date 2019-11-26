@@ -1,0 +1,11 @@
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(translationX: tableView.bounds.width, y: -50)
+
+               UIView.animate(
+                withDuration: 0.2,
+                delay: 0.1 * Double(indexPath.row),
+                   options: [.curveEaseInOut],
+                   animations: {
+                       cell.transform = CGAffineTransform(translationX: 0, y: 0)
+               })
+           }
