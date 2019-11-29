@@ -1,0 +1,73 @@
+    
+    
+    class ViewController:UIPickerViewDelegate,UIPickerViewDataSource
+{
+    var pickerView:UIPickerView = UIPickerView()
+    let hospitalArray = ["Sjmc1","Sjmc2","Sjmc3","Sjmc4","Sjmc5","Sjmc6","Sjmc7"]
+
+    override func viewDidLoad() {
+    super.viewDidLoad()
+            pickerView.delegate = self
+        pickerView.dataSource = self
+    self.navigationItem.title = "\(self.selectedHospital) Patient"
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! Cell
+            let toolbar = UIToolbar()
+            toolbar.sizeToFit()
+            toolbar.tintColor = UIColor.black
+            toolbar.backgroundColor = UIColor.white
+            let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePickerView))
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelPickerView))
+            toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+            toolbar.isUserInteractionEnabled = true
+            cell.textField.inputAccessoryView = toolbar
+            cell.textField.inputView = pickerView
+            cell.textField.delegate = self
+            return cell
+        }
+        }
+    @objc func donePickerView()
+    {
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! HISLinkHospitalTableViewCell
+        if cell.hospitalTextField!.text!.count>0{
+            isHospitalSelected = true
+
+        }else{
+            isHospitalSelected = false
+
+        }
+        tableView.reloadData()
+        self.view.endEditing(true)
+    }
+    @objc func cancelPickerView()
+    {
+        self.view.endEditing(true)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return hospitalArray.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if hospitalArray.count > 0
+        {
+            return hospitalArray[row]
+        }
+        return ""
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! HISLinkHospitalTableViewCell
+        if hospitalArray.count > 0
+        {
+            selectedHospital = hospitalArray[row]
+            cell.hospitalTextField.text = hospitalArray[row]
+        }
+    }
+}
