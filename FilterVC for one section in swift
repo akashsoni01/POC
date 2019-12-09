@@ -1,0 +1,119 @@
+//  Created by Akash Soni on 02/12/19.
+
+
+import UIKit
+
+class FilterViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    static var isFilterApplied = false
+    static var appliedCellArray = [Bool]()
+    static var checkedCellArray = [Bool]()
+    static var titleArray = [String]()
+    @IBOutlet weak var tableview: UITableView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableview.delegate = self
+        tableview.dataSource = self
+        let applyButton = UIButton(type: .system)
+        applyButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        applyButton.setTitle("Apply", for: .normal)
+        applyButton.addTarget(self, action: #selector(applyTapped), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: applyButton)
+        
+        let cancelButton = UIButton(type: .system)
+        cancelButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cancelButton)
+        navigationItem.title = "Filter"
+        //viewcontroller navigation bar setup end
+        
+        
+
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 30))
+        let resetButton = UIButton(type: .system)
+        resetButton.frame = CGRect(x: (headerView.frame.width - 240) / 2, y: (headerView.frame.height - 30) / 2,width: 240,height: 30);
+        resetButton.setTitle("Reset", for: .normal)
+        resetButton.setTitleColor(UIColor.red, for: .normal)
+        let border = CALayer()
+        border.backgroundColor = UIColor.lightGray.cgColor
+        border.frame = CGRect(x: 0, y: headerView.frame.size.height-1, width: headerView.frame.size.width, height: 0.5)
+        headerView.layer.addSublayer(border)
+        resetButton.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
+        headerView.addSubview(resetButton)
+        tableview.tableHeaderView = headerView;
+        tableview.tableFooterView = UIView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if !(FilterViewController.isFilterApplied)
+        {
+            for i in 0..<FilterViewController.checkedCellArray.count{
+                    FilterViewController.checkedCellArray[i] = false
+                    FilterViewController.appliedCellArray[i] = false
+            }
+            tableview.reloadData()
+        }
+    }
+    @objc func cancelTapped(_ sender: Any) {
+        FilterViewController.checkedCellArray = FilterViewController.appliedCellArray
+        if FilterViewController.appliedCellArray.contains(true)
+        {
+            FilterViewController.isFilterApplied = true
+        }
+        else
+        {
+            FilterViewController.isFilterApplied = false
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    @objc func applyTapped(_ sender: Any) {
+        FilterViewController.appliedCellArray = FilterViewController.checkedCellArray
+        if FilterViewController.appliedCellArray.contains(true)
+        {
+            FilterViewController.isFilterApplied = true
+        }
+        else
+        {
+            FilterViewController.isFilterApplied = false
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return FilterViewController.titleArray.count
+    }
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HISAppointmentFilterTableViewCell")
+        cell?.textLabel?.text =  FilterViewController.titleArray[indexPath.row]
+        cell?.selectionStyle = .none
+        var isTrue: Bool = false
+        if FilterViewController.appliedCellArray.contains(true)
+        {
+            isTrue = true
+        }
+        if !isTrue || !(FilterViewController.isFilterApplied)
+        {
+            cell?.accessoryType = FilterViewController.checkedCellArray[indexPath.row] ? .checkmark : .none
+        }
+        else
+        {
+            cell?.accessoryType = FilterViewController.appliedCellArray[indexPath.row]  ? .checkmark : .none
+        }
+        return cell!
+    }
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        FilterViewController.checkedCellArray[indexPath.row] = FilterViewController.checkedCellArray[indexPath.row] ? false : true
+        if cell?.accessoryType == .checkmark{
+            cell?.accessoryType = .none
+        }else{
+            cell?.accessoryType = .checkmark
+        }
+    }
+    
+    @objc func resetButtonTapped(){
+        for i in 0..<FilterViewController.checkedCellArray.count{
+            FilterViewController.checkedCellArray[i] = false
+        }
+        FilterViewController.isFilterApplied = false
+        tableview.reloadData()
+    }
+}
