@@ -1,0 +1,17 @@
+import UIKit
+
+let array  = [1,2,3,4,56,34,2,23,345,23,234,2]
+extension Array {
+    func chunck(into size: Int)->[Element]{
+        if self.count >= size{
+            return Array(self[0..<size])
+        }
+        return self
+    }
+    func chunked(into size: Int) -> [[Element]] {
+        return stride(from: 0, to: count, by: size).map {
+            Array(self[$0 ..< Swift.min($0 + size, count)])
+        }
+    }
+}
+array.chunck(into: 10)
