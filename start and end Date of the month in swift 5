@@ -1,0 +1,22 @@
+extension Date {
+    
+    func startOfMonth() -> Date {
+        
+        var calendarInstance = Calendar.current
+        
+        calendarInstance.timeZone = TimeZone.init(abbreviation: "UTC")!
+        
+        return calendarInstance.date(from: calendarInstance.dateComponents([.year, .month], from: calendarInstance.startOfDay(for: self)))!
+    }
+    
+    func endOfMonth() -> Date {
+        
+        var calendarInstance = Calendar.current
+        
+        calendarInstance.timeZone = TimeZone.init(abbreviation: "UTC")!
+        
+        return calendarInstance.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+    }
+}
+
+
