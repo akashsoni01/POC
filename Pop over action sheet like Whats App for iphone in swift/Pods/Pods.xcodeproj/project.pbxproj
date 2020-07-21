@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0193AFA5288AFD2B2D4B45856EC5AF61 /* FTPopOverMenu_Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BA78EAAFCCCA78F9EC2D2B81432520CB /* FTPopOverMenu_Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D6CDF752BA20D52B210E17C19F3DD7A /* FTPopOverMenu_Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E831AC360F5B539630B61051707617 /* FTPopOverMenu_Swift-dummy.m */; };
+		283F4D585A1C87CBEE6150D31DE22F26 /* UIControl+Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15046733D0561CA0C46F76969934E4F9 /* UIControl+Point.swift */; };
+		4ED4CC550C71968819EE5E0B53F8274D /* FTPopOverMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F929A6B62427E79146FE804ED0669 /* FTPopOverMenuCell.swift */; };
+		770C91285C1A9E698EBB50E103820FB3 /* FTConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149B1E295ADD0F3568087686A51CEC /* FTConfiguration.swift */; };
+		7C43739BF1581DE5DF35A1FA8D68FEB2 /* FTPopOverMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EDA90DB84CF17E57340D7F714FD58 /* FTPopOverMenu.swift */; };
+		849E1441D4DCBFD826F77ABEA94EF6D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		8BAE8067D660BDDFF39E46971DB65CAF /* FT+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF90EBA000C4AF7288B39C4F290E33 /* FT+Extension.swift */; };
+		8FF9B1B7C8E623D0EE5D5CB197B2ED2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		AB4BD96AA30B3E380735E8B27A02D7E8 /* Pods-Pop over action sheet for iphone in swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DCECAC15681ECF1A55421266A03869 /* Pods-Pop over action sheet for iphone in swift-dummy.m */; };
+		C88DBCF1B7743A12A1073A6B5DD056A7 /* FTCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677CD22B4E9069C7469D003EBF324C1F /* FTCellConfiguration.swift */; };
+		CFEBCF3F8EA3072C9EDCF777050EFEAA /* UIScreen+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B5E8BBFCC6A9A960F27EB32AC3AF4 /* UIScreen+Frame.swift */; };
+		D1EEA64F0B5BBB58A6F598B0E783CA4B /* FTConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C36751D29A8D9C078A8BC79597D82A /* FTConstants.swift */; };
+		D6F927F6A7F7096AC97AEF6EC69C4E12 /* Pods-Pop over action sheet for iphone in swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9700CAEE872C3B7D5C735D7612D2B3 /* Pods-Pop over action sheet for iphone in swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A363B27ED268E5AFE65A2ECD9B4712D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 989619F863D399C5538843E81223983E;
+			remoteInfo = FTPopOverMenu_Swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03492F3954D2037DABC5A64F290F5A84 /* FTPopOverMenu_Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FTPopOverMenu_Swift.modulemap; sourceTree = "<group>"; };
+		1009680D03E7297EF05A776750BE235B /* Pods-Pop over action sheet for iphone in swift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pop over action sheet for iphone in swift-frameworks.sh"; sourceTree = "<group>"; };
+		1100BB45CC51D1146FAEDDAA3926DA37 /* FTPopOverMenu_Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FTPopOverMenu_Swift-Info.plist"; sourceTree = "<group>"; };
+		1339FB3256859AD6D45B932F15F91E90 /* Pods-Pop over action sheet for iphone in swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pop over action sheet for iphone in swift.release.xcconfig"; sourceTree = "<group>"; };
+		15046733D0561CA0C46F76969934E4F9 /* UIControl+Point.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIControl+Point.swift"; path = "FTPopOverMenu_Swift/UIControl+Point.swift"; sourceTree = "<group>"; };
+		183EDA90DB84CF17E57340D7F714FD58 /* FTPopOverMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTPopOverMenu.swift; path = FTPopOverMenu_Swift/FTPopOverMenu.swift; sourceTree = "<group>"; };
+		1B50AD05AE55ADB90CE1E56613BB6969 /* Pods-Pop over action sheet for iphone in swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Pop over action sheet for iphone in swift.modulemap"; sourceTree = "<group>"; };
+		1CB853BFD70D55676A71A9DD2077AB3B /* Pods-Pop over action sheet for iphone in swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pop over action sheet for iphone in swift.debug.xcconfig"; sourceTree = "<group>"; };
+		1DFCFC5CBD1F83FE13111C9F95B71F1F /* Pods-Pop over action sheet for iphone in swift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pop over action sheet for iphone in swift-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2153F5160BF96D90442A5F684406538F /* Pods_Pop_over_action_sheet_for_iphone_in_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Pop_over_action_sheet_for_iphone_in_swift.framework; path = "Pods-Pop over action sheet for iphone in swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2766E211016ED57D4F9773C67BA09EF2 /* FTPopOverMenu_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FTPopOverMenu_Swift.framework; path = FTPopOverMenu_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		406B5E8BBFCC6A9A960F27EB32AC3AF4 /* UIScreen+Frame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScreen+Frame.swift"; path = "FTPopOverMenu_Swift/UIScreen+Frame.swift"; sourceTree = "<group>"; };
+		46C36751D29A8D9C078A8BC79597D82A /* FTConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTConstants.swift; path = FTPopOverMenu_Swift/FTConstants.swift; sourceTree = "<group>"; };
+		48E831AC360F5B539630B61051707617 /* FTPopOverMenu_Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FTPopOverMenu_Swift-dummy.m"; sourceTree = "<group>"; };
+		4D149B1E295ADD0F3568087686A51CEC /* FTConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTConfiguration.swift; path = FTPopOverMenu_Swift/FTConfiguration.swift; sourceTree = "<group>"; };
+		677CD22B4E9069C7469D003EBF324C1F /* FTCellConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTCellConfiguration.swift; path = FTPopOverMenu_Swift/FTCellConfiguration.swift; sourceTree = "<group>"; };
+		6B1859E62CEC11E41DBF23D41C5C23DA /* Pods-Pop over action sheet for iphone in swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pop over action sheet for iphone in swift-Info.plist"; sourceTree = "<group>"; };
+		7602C21ADC62367524F475B08E31C28A /* FTPopOverMenu_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FTPopOverMenu_Swift.release.xcconfig; sourceTree = "<group>"; };
+		7ABF90EBA000C4AF7288B39C4F290E33 /* FT+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FT+Extension.swift"; path = "FTPopOverMenu_Swift/FT+Extension.swift"; sourceTree = "<group>"; };
+		90DCECAC15681ECF1A55421266A03869 /* Pods-Pop over action sheet for iphone in swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pop over action sheet for iphone in swift-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A56F929A6B62427E79146FE804ED0669 /* FTPopOverMenuCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTPopOverMenuCell.swift; path = FTPopOverMenu_Swift/FTPopOverMenuCell.swift; sourceTree = "<group>"; };
+		A60B2DCCAC1C8CFD73B6893A6FC15ADB /* FTPopOverMenu_Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FTPopOverMenu_Swift-prefix.pch"; sourceTree = "<group>"; };
+		AD9700CAEE872C3B7D5C735D7612D2B3 /* Pods-Pop over action sheet for iphone in swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pop over action sheet for iphone in swift-umbrella.h"; sourceTree = "<group>"; };
+		BA78EAAFCCCA78F9EC2D2B81432520CB /* FTPopOverMenu_Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FTPopOverMenu_Swift-umbrella.h"; sourceTree = "<group>"; };
+		D16406839C0E7022A43C6A8337B928DA /* Pods-Pop over action sheet for iphone in swift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pop over action sheet for iphone in swift-acknowledgements.plist"; sourceTree = "<group>"; };
+		EB20C192A3FA72D096E21F61A649CDFB /* FTPopOverMenu_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FTPopOverMenu_Swift.debug.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6370CEA1A5F14DD83690DD474A542059 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849E1441D4DCBFD826F77ABEA94EF6D5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B7F33652ED5603AFA0CB0173F992529 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF9B1B7C8E623D0EE5D5CB197B2ED2B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18DAD4B4286709F8728CB7E334D8F899 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				03492F3954D2037DABC5A64F290F5A84 /* FTPopOverMenu_Swift.modulemap */,
+				48E831AC360F5B539630B61051707617 /* FTPopOverMenu_Swift-dummy.m */,
+				1100BB45CC51D1146FAEDDAA3926DA37 /* FTPopOverMenu_Swift-Info.plist */,
+				A60B2DCCAC1C8CFD73B6893A6FC15ADB /* FTPopOverMenu_Swift-prefix.pch */,
+				BA78EAAFCCCA78F9EC2D2B81432520CB /* FTPopOverMenu_Swift-umbrella.h */,
+				EB20C192A3FA72D096E21F61A649CDFB /* FTPopOverMenu_Swift.debug.xcconfig */,
+				7602C21ADC62367524F475B08E31C28A /* FTPopOverMenu_Swift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FTPopOverMenu_Swift";
+			sourceTree = "<group>";
+		};
+		405380CEB76C08F450AD31E5B873F9B4 /* FTPopOverMenu_Swift */ = {
+			isa = PBXGroup;
+			children = (
+				7ABF90EBA000C4AF7288B39C4F290E33 /* FT+Extension.swift */,
+				677CD22B4E9069C7469D003EBF324C1F /* FTCellConfiguration.swift */,
+				4D149B1E295ADD0F3568087686A51CEC /* FTConfiguration.swift */,
+				46C36751D29A8D9C078A8BC79597D82A /* FTConstants.swift */,
+				183EDA90DB84CF17E57340D7F714FD58 /* FTPopOverMenu.swift */,
+				A56F929A6B62427E79146FE804ED0669 /* FTPopOverMenuCell.swift */,
+				15046733D0561CA0C46F76969934E4F9 /* UIControl+Point.swift */,
+				406B5E8BBFCC6A9A960F27EB32AC3AF4 /* UIScreen+Frame.swift */,
+				18DAD4B4286709F8728CB7E334D8F899 /* Support Files */,
+			);
+			name = FTPopOverMenu_Swift;
+			path = FTPopOverMenu_Swift;
+			sourceTree = "<group>";
+		};
+		4BC37B14130C94E0F4DBA8E2A9EB1873 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2766E211016ED57D4F9773C67BA09EF2 /* FTPopOverMenu_Swift.framework */,
+				2153F5160BF96D90442A5F684406538F /* Pods_Pop_over_action_sheet_for_iphone_in_swift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E2E286E85EE2500E36092961E76DF9D /* Pods-Pop over action sheet for iphone in swift */ = {
+			isa = PBXGroup;
+			children = (
+				1B50AD05AE55ADB90CE1E56613BB6969 /* Pods-Pop over action sheet for iphone in swift.modulemap */,
+				1DFCFC5CBD1F83FE13111C9F95B71F1F /* Pods-Pop over action sheet for iphone in swift-acknowledgements.markdown */,
+				D16406839C0E7022A43C6A8337B928DA /* Pods-Pop over action sheet for iphone in swift-acknowledgements.plist */,
+				90DCECAC15681ECF1A55421266A03869 /* Pods-Pop over action sheet for iphone in swift-dummy.m */,
+				1009680D03E7297EF05A776750BE235B /* Pods-Pop over action sheet for iphone in swift-frameworks.sh */,
+				6B1859E62CEC11E41DBF23D41C5C23DA /* Pods-Pop over action sheet for iphone in swift-Info.plist */,
+				AD9700CAEE872C3B7D5C735D7612D2B3 /* Pods-Pop over action sheet for iphone in swift-umbrella.h */,
+				1CB853BFD70D55676A71A9DD2077AB3B /* Pods-Pop over action sheet for iphone in swift.debug.xcconfig */,
+				1339FB3256859AD6D45B932F15F91E90 /* Pods-Pop over action sheet for iphone in swift.release.xcconfig */,
+			);
+			name = "Pods-Pop over action sheet for iphone in swift";
+			path = "Target Support Files/Pods-Pop over action sheet for iphone in swift";
+			sourceTree = "<group>";
+		};
+		77653632DF98C151870E8D5E90C2ED8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				405380CEB76C08F450AD31E5B873F9B4 /* FTPopOverMenu_Swift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8DF4502E48B1FB489EE0990EB1AD10B6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E2E286E85EE2500E36092961E76DF9D /* Pods-Pop over action sheet for iphone in swift */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				77653632DF98C151870E8D5E90C2ED8F /* Pods */,
+				4BC37B14130C94E0F4DBA8E2A9EB1873 /* Products */,
+				8DF4502E48B1FB489EE0990EB1AD10B6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9B1F5FCA6401BBEBF8FA0DB6E318D7E2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6F927F6A7F7096AC97AEF6EC69C4E12 /* Pods-Pop over action sheet for iphone in swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B81B027108B4BF01F77286054B42E1E6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0193AFA5288AFD2B2D4B45856EC5AF61 /* FTPopOverMenu_Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		989619F863D399C5538843E81223983E /* FTPopOverMenu_Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB4BF174D5B0894019702BFAE0C5A81 /* Build configuration list for PBXNativeTarget "FTPopOverMenu_Swift" */;
+			buildPhases = (
+				B81B027108B4BF01F77286054B42E1E6 /* Headers */,
+				9B7336DBE2E9AA6C4D317064817FF86E /* Sources */,
+				6370CEA1A5F14DD83690DD474A542059 /* Frameworks */,
+				0151F037151E64A7C37E9898430045FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FTPopOverMenu_Swift;
+			productName = FTPopOverMenu_Swift;
+			productReference = 2766E211016ED57D4F9773C67BA09EF2 /* FTPopOverMenu_Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B92F7EFF7ED1DD0100D85B3E9374D4D1 /* Pods-Pop over action sheet for iphone in swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70AF207E2E220741BCD520D2CCEFFA78 /* Build configuration list for PBXNativeTarget "Pods-Pop over action sheet for iphone in swift" */;
+			buildPhases = (
+				9B1F5FCA6401BBEBF8FA0DB6E318D7E2 /* Headers */,
+				1BAEBA45ABD9457D070D75E4FA8C0F64 /* Sources */,
+				6B7F33652ED5603AFA0CB0173F992529 /* Frameworks */,
+				D538199DE4EE19CDD5503E0F186106E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBCD0BE915FB0A8226BEBB8BCE589961 /* PBXTargetDependency */,
+			);
+			name = "Pods-Pop over action sheet for iphone in swift";
+			productName = "Pods-Pop over action sheet for iphone in swift";
+			productReference = 2153F5160BF96D90442A5F684406538F /* Pods_Pop_over_action_sheet_for_iphone_in_swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 4BC37B14130C94E0F4DBA8E2A9EB1873 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				989619F863D399C5538843E81223983E /* FTPopOverMenu_Swift */,
+				B92F7EFF7ED1DD0100D85B3E9374D4D1 /* Pods-Pop over action sheet for iphone in swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0151F037151E64A7C37E9898430045FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D538199DE4EE19CDD5503E0F186106E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BAEBA45ABD9457D070D75E4FA8C0F64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4BD96AA30B3E380735E8B27A02D7E8 /* Pods-Pop over action sheet for iphone in swift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B7336DBE2E9AA6C4D317064817FF86E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BAE8067D660BDDFF39E46971DB65CAF /* FT+Extension.swift in Sources */,
+				C88DBCF1B7743A12A1073A6B5DD056A7 /* FTCellConfiguration.swift in Sources */,
+				770C91285C1A9E698EBB50E103820FB3 /* FTConfiguration.swift in Sources */,
+				D1EEA64F0B5BBB58A6F598B0E783CA4B /* FTConstants.swift in Sources */,
+				7C43739BF1581DE5DF35A1FA8D68FEB2 /* FTPopOverMenu.swift in Sources */,
+				0D6CDF752BA20D52B210E17C19F3DD7A /* FTPopOverMenu_Swift-dummy.m in Sources */,
+				4ED4CC550C71968819EE5E0B53F8274D /* FTPopOverMenuCell.swift in Sources */,
+				283F4D585A1C87CBEE6150D31DE22F26 /* UIControl+Point.swift in Sources */,
+				CFEBCF3F8EA3072C9EDCF777050EFEAA /* UIScreen+Frame.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBCD0BE915FB0A8226BEBB8BCE589961 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FTPopOverMenu_Swift;
+			target = 989619F863D399C5538843E81223983E /* FTPopOverMenu_Swift */;
+			targetProxy = 2A363B27ED268E5AFE65A2ECD9B4712D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		05F3D66507845D919939F7F587175C9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CB853BFD70D55676A71A9DD2077AB3B /* Pods-Pop over action sheet for iphone in swift.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Pop over action sheet for iphone in swift/Pods-Pop over action sheet for iphone in swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Pop over action sheet for iphone in swift/Pods-Pop over action sheet for iphone in swift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2339460800B371561F6F2B8D7940E24D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1339FB3256859AD6D45B932F15F91E90 /* Pods-Pop over action sheet for iphone in swift.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Pop over action sheet for iphone in swift/Pods-Pop over action sheet for iphone in swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Pop over action sheet for iphone in swift/Pods-Pop over action sheet for iphone in swift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C93C6F17C55CB54B3269DC5C33B5D720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB20C192A3FA72D096E21F61A649CDFB /* FTPopOverMenu_Swift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FTPopOverMenu_Swift/FTPopOverMenu_Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FTPopOverMenu_Swift/FTPopOverMenu_Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FTPopOverMenu_Swift/FTPopOverMenu_Swift.modulemap";
+				PRODUCT_MODULE_NAME = FTPopOverMenu_Swift;
+				PRODUCT_NAME = FTPopOverMenu_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E1C0E609CA7BFC79989440A43F55CD8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7602C21ADC62367524F475B08E31C28A /* FTPopOverMenu_Swift.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FTPopOverMenu_Swift/FTPopOverMenu_Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FTPopOverMenu_Swift/FTPopOverMenu_Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FTPopOverMenu_Swift/FTPopOverMenu_Swift.modulemap";
+				PRODUCT_MODULE_NAME = FTPopOverMenu_Swift;
+				PRODUCT_NAME = FTPopOverMenu_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */,
+				ECB437504DF805BD96CAABF97400B526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70AF207E2E220741BCD520D2CCEFFA78 /* Build configuration list for PBXNativeTarget "Pods-Pop over action sheet for iphone in swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05F3D66507845D919939F7F587175C9B /* Debug */,
+				2339460800B371561F6F2B8D7940E24D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB4BF174D5B0894019702BFAE0C5A81 /* Build configuration list for PBXNativeTarget "FTPopOverMenu_Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C93C6F17C55CB54B3269DC5C33B5D720 /* Debug */,
+				E1C0E609CA7BFC79989440A43F55CD8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

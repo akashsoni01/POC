@@ -1,0 +1,16 @@
+PODS:
+  - FTPopOverMenu_Swift (0.2.1)
+
+DEPENDENCIES:
+  - FTPopOverMenu_Swift (~> 0.2.0)
+
+SPEC REPOS:
+  trunk:
+    - FTPopOverMenu_Swift
+
+SPEC CHECKSUMS:
+  FTPopOverMenu_Swift: c91ce7301c358264743de028bc28177ee9d8e1a4
+
+PODFILE CHECKSUM: 3c44d14584d9ea31ba3ddc3c2bf6015f1c207689
+
+COCOAPODS: 1.9.1
