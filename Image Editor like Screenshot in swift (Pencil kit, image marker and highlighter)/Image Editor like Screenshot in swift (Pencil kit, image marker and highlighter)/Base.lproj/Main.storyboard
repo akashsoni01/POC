@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aax-bc-txR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Image_Editor_like_Screenshot_in_swift__Pencil_kit__image_marker_and_highlighter_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J42-x8-me1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J42-x8-me1" secondAttribute="trailing" id="D9G-H0-nXh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J42-x8-me1" secondAttribute="bottom" id="ihm-ag-VBx"/>
+                            <constraint firstItem="J42-x8-me1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m8f-CD-jJc"/>
+                            <constraint firstItem="J42-x8-me1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="np6-sf-Cxf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QB4-fW-8M0">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Redo" id="Ibe-tz-pWg">
+                                <connections>
+                                    <action selector="redo" destination="BYZ-38-t0r" id="G9J-hV-6cW"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Undo" id="I6k-fL-3zp">
+                                <connections>
+                                    <action selector="undo" destination="BYZ-38-t0r" id="TSv-V2-jEO"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Save" id="N0u-Hm-Fkp">
+                                <connections>
+                                    <action selector="saveImage" destination="BYZ-38-t0r" id="StK-gN-3vR"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Toggle" id="b2M-un-Llz">
+                                <connections>
+                                    <action selector="togglePicker" destination="BYZ-38-t0r" id="tCq-Hy-qku"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Clear" id="zLe-bQ-1nB">
+                                <connections>
+                                    <action selector="clear" destination="BYZ-38-t0r" id="BTs-mE-tp3"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentView" destination="J42-x8-me1" id="B5W-Nb-viX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="og9-LA-Qv4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aax-bc-txR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gvi-1I-hWM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="syi-9y-l4A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XgA-yI-9dK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+</document>
