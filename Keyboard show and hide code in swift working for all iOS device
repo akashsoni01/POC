@@ -9,7 +9,7 @@
     @objc func keyboardWillShow(notification: Notification) {
         DispatchQueue.main.async {
             let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
-            self.keyboardHeight = (keyboardSize?.height ?? 180.0)
+            self.keyboardHeight = (keyboardSize?.height ?? 180.0) + self.view.safeAreaInsets.bottom
             self.view.frame.origin.y -= self.keyboardHeight
         }
     }
