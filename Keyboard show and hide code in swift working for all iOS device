@@ -1,0 +1,21 @@
+    class ViewController:UIViewController {
+        var keyboardHeight:CGFloat = 0.0
+    
+        override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(GroupViewController.keyboardWillShow), name: Notification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(GroupViewController.keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        }
+    @objc func keyboardWillShow(notification: Notification) {
+        DispatchQueue.main.async {
+            let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+            self.keyboardHeight = (keyboardSize?.height ?? 180.0)
+            self.view.frame.origin.y -= self.keyboardHeight
+        }
+    }
+    @objc func keyboardWillHide(notification: Notification) {
+        DispatchQueue.main.async {
+            self.view.frame.origin.y += self.keyboardHeight
+        }
+    }
+   }
