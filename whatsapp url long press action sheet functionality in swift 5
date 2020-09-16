@@ -1,0 +1,39 @@
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+        print("working \(URL.absoluteString)")
+        
+        let alerSheet = UIAlertController.init(title: nil, message: url, preferredStyle: .actionSheet)
+        
+        alerSheet.addAction(UIAlertAction.init(title: "Open Link", style: .default, handler: { (action) in
+            UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
+        }))
+
+        alerSheet.addAction(UIAlertAction.init(title: "Open In Chrome", style: .default, handler: { (action) in
+            var newLink: String = url
+            newLink = url.replacingOccurrences(of: "http://", with: "googlechrome://")
+            if UIApplication.shared.canOpenURL(URL(string: newLink)!) {
+                UIApplication.shared.open(URL(string: newLink)!, options: [:], completionHandler: nil)
+
+            } else {
+                let alertController = UIAlertController(title: "Sorry", message: "Google Chrome app is not installed", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }))
+        
+        alerSheet.addAction(UIAlertAction.init(title: "Add To Reading List", style: .default, handler: { (action) in
+            try? SSReadingList.default()?.addItem(with: URL(string: url)!, title: url, previewText: "Reading List Skolaro")
+        }))
+        
+        alerSheet.addAction(UIAlertAction.init(title: "Copy", style: .default, handler: { (action) in
+            UIPasteboard.general.string = url
+        }))
+
+
+        alerSheet.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { (action) in
+            print("cancel action")
+        }))
+        self.present(alerSheet, animated: true, completion: nil)
+
+        return false
+    }
