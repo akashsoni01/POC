@@ -1,3 +1,6 @@
+//pod 'RichEditorView'
+
+import RichEditorView
 class ViewController:UIViewController{
       @IBOutlet weak var questionTextView: RichEditorView!
 
