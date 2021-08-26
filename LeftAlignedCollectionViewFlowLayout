@@ -1,0 +1,42 @@
+
+//
+//  Created by Akash Soni on 1/13/21.
+//  Copyright © 2021 buzzyears. All rights reserved.
+//
+import UIKit
+
+class LeftAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
+
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        self.headerReferenceSize = CGSize(width: self.collectionView?.frame.size.width ?? 300, height: 60)
+
+        let attributes = super.layoutAttributesForElements(in: rect)
+
+        var leftMargin = sectionInset.left
+        var maxY: CGFloat = -1.0
+        attributes?.forEach { layoutAttribute in
+            if layoutAttribute.frame.origin.y >= maxY {
+                leftMargin = sectionInset.left
+            }
+
+            layoutAttribute.frame.origin.x = leftMargin
+
+            leftMargin += layoutAttribute.frame.width + minimumInteritemSpacing
+            maxY = max(layoutAttribute.frame.maxY , maxY)
+        }
+
+        return attributes
+    }
+    
+    override func prepare() {
+        super.prepare()
+    }
+
+    override func layoutAttributesForDecorationView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, with: indexPath)
+        attributes.frame = CGRect(x: 0, y: 0, width: self.collectionView?.frame.size.width ?? 300, height: 60)
+
+        return attributes
+
+    }
+}
