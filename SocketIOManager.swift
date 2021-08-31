@@ -60,9 +60,6 @@ class SocketChatManager {
         socket?.on("new_message") { (data, ack) in
             guard let dataInfo = data.first as? [String:String] else { return }
             print(dataInfo["message"])
-//            if let response: SocketMessage = try? SocketParser.convert(data: dataInfo) {
-//                print("Message from '\(response.username)': \(response.message)")
-//            }
         }
         socket?.on("send_message") { (data, ack) in
             guard let dataInfo = data.first as? Data else { return }
