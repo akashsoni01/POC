@@ -95,7 +95,7 @@ class SocketChatManager {
 
     func send(message: String) {
         let msg = ["sender_id":"600",
-        "reciever_id":"603",
+        "receiver_id":"603",
         "message":"na na re "]
         socket?.emit("send_message", msg)
     }
