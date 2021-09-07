@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF7DBB7826E74BF700EBF654 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DBB7726E74BF700EBF654 /* AppDelegate.swift */; };
+		FF7DBB7A26E74BF700EBF654 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DBB7926E74BF700EBF654 /* SceneDelegate.swift */; };
+		FF7DBB7C26E74BF700EBF654 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DBB7B26E74BF700EBF654 /* ViewController.swift */; };
+		FF7DBB7F26E74BF700EBF654 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7DBB7D26E74BF700EBF654 /* Main.storyboard */; };
+		FF7DBB8126E74BF800EBF654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7DBB8026E74BF800EBF654 /* Assets.xcassets */; };
+		FF7DBB8426E74BF800EBF654 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7DBB8226E74BF800EBF654 /* LaunchScreen.storyboard */; };
+		FF7DBB8C26E74C0700EBF654 /* How To Make Netflix Video Player in Swift - Zero To App Store.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FF7DBB8B26E74C0700EBF654 /* How To Make Netflix Video Player in Swift - Zero To App Store.pdf */; };
+		FF7DBB8E26E74D5C00EBF654 /* CustomVideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DBB8D26E74D5C00EBF654 /* CustomVideoPlayerViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FF7DBB7426E74BF700EBF654 /* Custom Video Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom Video Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF7DBB7726E74BF700EBF654 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF7DBB7926E74BF700EBF654 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FF7DBB7B26E74BF700EBF654 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF7DBB7E26E74BF700EBF654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF7DBB8026E74BF800EBF654 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF7DBB8326E74BF800EBF654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF7DBB8526E74BF800EBF654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF7DBB8B26E74C0700EBF654 /* How To Make Netflix Video Player in Swift - Zero To App Store.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "How To Make Netflix Video Player in Swift - Zero To App Store.pdf"; sourceTree = "<group>"; };
+		FF7DBB8D26E74D5C00EBF654 /* CustomVideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayerViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF7DBB7126E74BF700EBF654 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF7DBB6B26E74BF700EBF654 = {
+			isa = PBXGroup;
+			children = (
+				FF7DBB8B26E74C0700EBF654 /* How To Make Netflix Video Player in Swift - Zero To App Store.pdf */,
+				FF7DBB7626E74BF700EBF654 /* Custom Video Player */,
+				FF7DBB7526E74BF700EBF654 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF7DBB7526E74BF700EBF654 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF7DBB7426E74BF700EBF654 /* Custom Video Player.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF7DBB7626E74BF700EBF654 /* Custom Video Player */ = {
+			isa = PBXGroup;
+			children = (
+				FF7DBB7726E74BF700EBF654 /* AppDelegate.swift */,
+				FF7DBB7926E74BF700EBF654 /* SceneDelegate.swift */,
+				FF7DBB7B26E74BF700EBF654 /* ViewController.swift */,
+				FF7DBB8D26E74D5C00EBF654 /* CustomVideoPlayerViewController.swift */,
+				FF7DBB7D26E74BF700EBF654 /* Main.storyboard */,
+				FF7DBB8026E74BF800EBF654 /* Assets.xcassets */,
+				FF7DBB8226E74BF800EBF654 /* LaunchScreen.storyboard */,
+				FF7DBB8526E74BF800EBF654 /* Info.plist */,
+			);
+			path = "Custom Video Player";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF7DBB7326E74BF700EBF654 /* Custom Video Player */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF7DBB8826E74BF800EBF654 /* Build configuration list for PBXNativeTarget "Custom Video Player" */;
+			buildPhases = (
+				FF7DBB7026E74BF700EBF654 /* Sources */,
+				FF7DBB7126E74BF700EBF654 /* Frameworks */,
+				FF7DBB7226E74BF700EBF654 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Custom Video Player";
+			productName = "Custom Video Player";
+			productReference = FF7DBB7426E74BF700EBF654 /* Custom Video Player.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF7DBB6C26E74BF700EBF654 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					FF7DBB7326E74BF700EBF654 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = FF7DBB6F26E74BF700EBF654 /* Build configuration list for PBXProject "Custom Video Player" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF7DBB6B26E74BF700EBF654;
+			productRefGroup = FF7DBB7526E74BF700EBF654 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF7DBB7326E74BF700EBF654 /* Custom Video Player */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF7DBB7226E74BF700EBF654 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF7DBB8C26E74C0700EBF654 /* How To Make Netflix Video Player in Swift - Zero To App Store.pdf in Resources */,
+				FF7DBB8426E74BF800EBF654 /* LaunchScreen.storyboard in Resources */,
+				FF7DBB8126E74BF800EBF654 /* Assets.xcassets in Resources */,
+				FF7DBB7F26E74BF700EBF654 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF7DBB7026E74BF700EBF654 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF7DBB7C26E74BF700EBF654 /* ViewController.swift in Sources */,
+				FF7DBB7826E74BF700EBF654 /* AppDelegate.swift in Sources */,
+				FF7DBB8E26E74D5C00EBF654 /* CustomVideoPlayerViewController.swift in Sources */,
+				FF7DBB7A26E74BF700EBF654 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF7DBB7D26E74BF700EBF654 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF7DBB7E26E74BF700EBF654 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF7DBB8226E74BF800EBF654 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF7DBB8326E74BF800EBF654 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF7DBB8626E74BF800EBF654 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF7DBB8726E74BF800EBF654 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF7DBB8926E74BF800EBF654 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4M45SYN38G;
+				INFOPLIST_FILE = "Custom Video Player/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.POC.Custom-Video-Player";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF7DBB8A26E74BF800EBF654 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4M45SYN38G;
+				INFOPLIST_FILE = "Custom Video Player/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.POC.Custom-Video-Player";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF7DBB6F26E74BF700EBF654 /* Build configuration list for PBXProject "Custom Video Player" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF7DBB8626E74BF800EBF654 /* Debug */,
+				FF7DBB8726E74BF800EBF654 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF7DBB8826E74BF800EBF654 /* Build configuration list for PBXNativeTarget "Custom Video Player" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF7DBB8926E74BF800EBF654 /* Debug */,
+				FF7DBB8A26E74BF800EBF654 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF7DBB6C26E74BF700EBF654 /* Project object */;
+}
