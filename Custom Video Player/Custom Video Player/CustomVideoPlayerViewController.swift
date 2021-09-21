@@ -40,6 +40,19 @@ class CustomVideoPlayerViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleControls))
         view.addGestureRecognizer(tapGesture)
 
+        NotificationCenter.default.addObserver(
+            self,
+            selector:  #selector(deviceDidRotate),
+            name: UIDevice.orientationDidChangeNotification,
+            object: nil
+        )
+    }
+
+    @objc func deviceDidRotate() {
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = videoPlayerView.frame;
+        videoPlayerView.layer.addSublayer(playerLayer)
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -58,9 +71,9 @@ class CustomVideoPlayerViewController: UIViewController {
         resetTimer()
     }
 
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscapeLeft
-    }
+//     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//         return .landscapeLeft
+//     }
     func setupVideoPlayer() {
         guard let url = URL(string: videoUrlString) else {
             return
