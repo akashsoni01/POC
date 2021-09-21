@@ -51,7 +51,7 @@ class CustomVideoPlayerViewController: UIViewController {
     @objc func deviceDidRotate() {
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = videoPlayerView.frame;
-        videoPlayerView.layer.addSublayer(playerLayer)
+        videoPlayerView.layer.sublayers = [playerLayer]
 
     }
 
