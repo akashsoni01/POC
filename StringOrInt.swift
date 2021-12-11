@@ -25,3 +25,31 @@ enum StringOrInt: Codable {
         }
     }
 }
+
+
+/*
+## how to use StringOrInt
+ problem - you are returning a key that have two type of value string and int in api resonse
+ so define that key with StringOrInt and create a extension like that to use it in your Channge yourVarname and YourJsonCodableModelName.
+
+
+ 
+ extension YourJsonCodableModelName{
+     var yourVarName:Int?{
+         var yourVarName = 0
+         if let yourVarName = reference_user_id{
+             switch yourVarName{
+             case let .integer(value):
+                 refrenceUserId = value
+             case let .string(value):
+                 refrenceUserId = Int(value) ?? 0
+
+             }
+         }else{
+    return nil
+ }
+         return refrenceUserId
+     }
+ }
+
+ */
