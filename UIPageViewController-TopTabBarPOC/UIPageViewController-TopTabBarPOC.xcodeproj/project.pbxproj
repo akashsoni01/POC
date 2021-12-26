@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFECEA6A27784C490074E93B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECEA6927784C490074E93B /* AppDelegate.swift */; };
+		FFECEA6C27784C490074E93B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECEA6B27784C490074E93B /* SceneDelegate.swift */; };
+		FFECEA7127784C490074E93B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFECEA6F27784C490074E93B /* Main.storyboard */; };
+		FFECEA7327784C4B0074E93B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFECEA7227784C4B0074E93B /* Assets.xcassets */; };
+		FFECEA7627784C4B0074E93B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFECEA7427784C4B0074E93B /* LaunchScreen.storyboard */; };
+		FFECEA7E27784D2A0074E93B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECEA7D27784D2A0074E93B /* PageViewController.swift */; };
+		FFECEA8027784D360074E93B /* OneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECEA7F27784D360074E93B /* OneViewController.swift */; };
+		FFECEA8227784D3D0074E93B /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECEA8127784D3D0074E93B /* TwoViewController.swift */; };
+		FFECEA8427784D430074E93B /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECEA8327784D430074E93B /* ThreeViewController.swift */; };
+		FFECEA8627784D490074E93B /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECEA8527784D490074E93B /* FourViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FFECEA6627784C490074E93B /* UIPageViewController-TopTabBarPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIPageViewController-TopTabBarPOC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFECEA6927784C490074E93B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFECEA6B27784C490074E93B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FFECEA7027784C490074E93B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFECEA7227784C4B0074E93B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFECEA7527784C4B0074E93B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FFECEA7727784C4B0074E93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFECEA7D27784D2A0074E93B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		FFECEA7F27784D360074E93B /* OneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneViewController.swift; sourceTree = "<group>"; };
+		FFECEA8127784D3D0074E93B /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
+		FFECEA8327784D430074E93B /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
+		FFECEA8527784D490074E93B /* FourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFECEA6327784C490074E93B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFECEA5D27784C490074E93B = {
+			isa = PBXGroup;
+			children = (
+				FFECEA6827784C490074E93B /* UIPageViewController-TopTabBarPOC */,
+				FFECEA6727784C490074E93B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFECEA6727784C490074E93B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFECEA6627784C490074E93B /* UIPageViewController-TopTabBarPOC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFECEA6827784C490074E93B /* UIPageViewController-TopTabBarPOC */ = {
+			isa = PBXGroup;
+			children = (
+				FFECEA6927784C490074E93B /* AppDelegate.swift */,
+				FFECEA6B27784C490074E93B /* SceneDelegate.swift */,
+				FFECEA7D27784D2A0074E93B /* PageViewController.swift */,
+				FFECEA7F27784D360074E93B /* OneViewController.swift */,
+				FFECEA8127784D3D0074E93B /* TwoViewController.swift */,
+				FFECEA8327784D430074E93B /* ThreeViewController.swift */,
+				FFECEA8527784D490074E93B /* FourViewController.swift */,
+				FFECEA6F27784C490074E93B /* Main.storyboard */,
+				FFECEA7227784C4B0074E93B /* Assets.xcassets */,
+				FFECEA7427784C4B0074E93B /* LaunchScreen.storyboard */,
+				FFECEA7727784C4B0074E93B /* Info.plist */,
+			);
+			path = "UIPageViewController-TopTabBarPOC";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFECEA6527784C490074E93B /* UIPageViewController-TopTabBarPOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFECEA7A27784C4B0074E93B /* Build configuration list for PBXNativeTarget "UIPageViewController-TopTabBarPOC" */;
+			buildPhases = (
+				FFECEA6227784C490074E93B /* Sources */,
+				FFECEA6327784C490074E93B /* Frameworks */,
+				FFECEA6427784C490074E93B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIPageViewController-TopTabBarPOC";
+			productName = "UIPageViewController-TopTabBarPOC";
+			productReference = FFECEA6627784C490074E93B /* UIPageViewController-TopTabBarPOC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFECEA5E27784C490074E93B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					FFECEA6527784C490074E93B = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = FFECEA6127784C490074E93B /* Build configuration list for PBXProject "UIPageViewController-TopTabBarPOC" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFECEA5D27784C490074E93B;
+			productRefGroup = FFECEA6727784C490074E93B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFECEA6527784C490074E93B /* UIPageViewController-TopTabBarPOC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFECEA6427784C490074E93B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFECEA7627784C4B0074E93B /* LaunchScreen.storyboard in Resources */,
+				FFECEA7327784C4B0074E93B /* Assets.xcassets in Resources */,
+				FFECEA7127784C490074E93B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFECEA6227784C490074E93B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFECEA8227784D3D0074E93B /* TwoViewController.swift in Sources */,
+				FFECEA6A27784C490074E93B /* AppDelegate.swift in Sources */,
+				FFECEA8627784D490074E93B /* FourViewController.swift in Sources */,
+				FFECEA6C27784C490074E93B /* SceneDelegate.swift in Sources */,
+				FFECEA8427784D430074E93B /* ThreeViewController.swift in Sources */,
+				FFECEA7E27784D2A0074E93B /* PageViewController.swift in Sources */,
+				FFECEA8027784D360074E93B /* OneViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FFECEA6F27784C490074E93B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFECEA7027784C490074E93B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFECEA7427784C4B0074E93B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFECEA7527784C4B0074E93B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFECEA7827784C4B0074E93B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFECEA7927784C4B0074E93B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFECEA7B27784C4B0074E93B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4M45SYN38G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "UIPageViewController-TopTabBarPOC/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.POC.base-project.UIPageViewController-TopTabBarPOC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFECEA7C27784C4B0074E93B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4M45SYN38G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "UIPageViewController-TopTabBarPOC/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.POC.base-project.UIPageViewController-TopTabBarPOC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFECEA6127784C490074E93B /* Build configuration list for PBXProject "UIPageViewController-TopTabBarPOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFECEA7827784C4B0074E93B /* Debug */,
+				FFECEA7927784C4B0074E93B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFECEA7A27784C4B0074E93B /* Build configuration list for PBXNativeTarget "UIPageViewController-TopTabBarPOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFECEA7B27784C4B0074E93B /* Debug */,
+				FFECEA7C27784C4B0074E93B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFECEA5E27784C490074E93B /* Project object */;
+}
