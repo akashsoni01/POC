@@ -1,0 +1,25 @@
+func fetchFilms(completionHandler: @escaping ([Film]) -> Void) {
+// 1. 
+    let url = URL(string: domainUrlString + "films/")!
+
+// 2. 
+    let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+      if let error = error {
+        print("Error with fetching films: \(error)")
+        return
+      }
+// 3. 
+      guard let httpResponse = response as? HTTPURLResponse,
+            (200...299).contains(httpResponse.statusCode) else {
+        print("Error with the response, unexpected status code: \(response)")
+        return
+      }
+// 4.  
+      if let data = data,
+        let filmSummary = try? JSONDecoder().decode(FilmSummary.self, from: data) {
+        completionHandler(filmSummary.results ?? [])
+      }
+    })
+// 5. 
+    task.resume()
+  }
