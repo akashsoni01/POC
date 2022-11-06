@@ -1,0 +1,120 @@
+//
+//  AsyncDataTask.swift
+//  api call async await in swift
+//
+//  Created by Akash soni on 06/11/22.
+//
+
+
+
+import Foundation
+
+
+struct Album: Codable {
+    let str: String
+}
+
+internal actor AsyncDataTask {
+    private var requestUrl:URL?
+    private var request:URLRequest?
+
+    internal func fetchAlbumWithAsyncURLSession(urlPath : String, dataToServer : Data, params:Dictionary<String, Any> , method: String = "GET", isPublic:Bool = false, header:[String:String] = [:]) async throws -> (Data, URLResponse) {
+
+        let headerDict = header
+        request = URLRequest(url: URL(string: urlPath)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
+        request?.httpMethod = method
+        request?.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        switch method {
+        case "GET":
+            if !params.isEmpty {
+                var urlComp = URLComponents(string: urlPath)!
+                var items = [URLQueryItem]()
+                
+                for (key,value) in params {
+                    items.append(URLQueryItem(name: key, value: value as? String))
+                }
+                
+                items = items.filter{!$0.name.isEmpty}
+                
+                if !items.isEmpty {
+                    urlComp.queryItems = items
+                }
+                requestUrl =  urlComp.url
+                request?.url = requestUrl
+            }
+        case "POST", "PUT":
+            request?.httpBody = dataToServer
+        default:
+            break
+        }
+        
+        request?.allHTTPHeaderFields = headerDict
+        
+        debugPrint("URL \(urlPath)")
+        debugPrint("Headers \(request?.allHTTPHeaderFields?.description ?? "No Header")")
+        if let debugData = request?.httpBody{
+            debugPrint("Request Body \(debugData.prettyJson ?? "No Body")")
+        }
+        let configuration = URLSessionConfiguration.default
+        let (data, response) = try await URLSession(configuration: configuration).data(for: request!)
+
+        return (data, response)
+    }
+}
+
+internal actor Apis {
+    internal static func getGroceryList() async -> DymmyModelArray? {
+        let url = "https://jsonplaceholder.typicode.com/posts"
+        let task = AsyncDataTask()
+        if let (data, response) = try? await task.fetchAlbumWithAsyncURLSession(urlPath: url, dataToServer: Data(), params: [:]) {
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    let op = try? JSONDecoder ().decode (DymmyModelArray.self, from: data)
+                    return op
+                } else {
+                    return nil
+                }
+            }
+        }
+        
+        return nil
+    }
+}
+
+
+
+
+import Foundation
+
+struct DummyModel: Codable {
+    let userID, id: Int
+    let title, body: String
+
+    enum CodingKeys: String, CodingKey {
+        case userID = "userId"
+        case id, title, body
+    }
+}
+
+typealias DymmyModelArray = [DummyModel]
+
+
+
+
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        Task {
+            let x = await Apis.getGroceryList()
+            print(x)
+            }
+        }
+
+}
+
