@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct Constants {
+    typealias movieListComplition = (_ :MovieData?) -> Void
+    typealias ratingComplition = (_ :Ratings?) -> Void
+    static let baseURL = "https://api.npoint.io/"
+}
+
 class APIs {
     static func fetchApi(urlString: String, handler: @escaping Constants.movieListComplition) {
         guard let url = URL(string: urlString) else { return }
@@ -41,3 +47,28 @@ class APIs {
     }
 
 }
+
+
+/*
+// how to use
+    private func fetchRatings() {
+        APIs.fetchRatings(urlString: Constants.baseURL + "3f07f86370e2f122234c") { ratings in
+            for i in 0 ..< self.movieList.count {
+                guard let ratings = ratings else { return }
+                let rating = ratings.filter({ rating in
+                    return self.movieList[i].id == rating.id
+                }).first?.rating ?? 0.0
+                self.movieList[i].rating = String(format: "Rating: %.2f", rating)
+                self.movieList[i].ratingDouble = rating
+            }
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+
+
+
+*/
+
