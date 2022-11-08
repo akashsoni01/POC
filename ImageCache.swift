@@ -7,6 +7,10 @@
 
 import UIKit
 
+struct Constants {
+        static var imageCache = NSCache<AnyObject, AnyObject>()
+}
+
 extension UIImageView {
     func downloadImage(urlString: String) {
         guard let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else { return }
